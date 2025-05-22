@@ -1,30 +1,17 @@
-# IP Info Bot - by GusOfc
+# Bot Info TikTok by GusOfc
 
-![Logo](https://img.shields.io/badge/Author-GUSxOFC-blueviolet)
-![Status](https://img.shields.io/badge/Status-Tahap%20Perkembangan-red)
-![Made in](https://img.shields.io/badge/Made%20With-Bash%20%7C%20Termux-green)
+Script sederhana Termux untuk mengambil ID TikTok dari link profil.
 
-**IP Info Bot** adalah script Termux buatan **GUSxOFC** yang menampilkan informasi lengkap berdasarkan IP publik HP kamu, dengan tampilan super keren dan font yang penuh gaya.
+## Info
+- Bot Name: Bot Info by GusOfc
+- Owner: GUSxOFC
+- Version: 1.0
+- Status: kerja jadi agak jelek
 
----
-
-## Fitur
-
-- Menampilkan IP publik
-- Menampilkan lokasi detail (kota, negara, zona waktu)
-- Deteksi provider & koordinat lokasi
-- Hitung total pengguna (lokal)
-- Tampilan estetis menggunakan `figlet` + `lolcat`
-- Informasi bot dan status update
-
----
-
-## Instalasi
+## Cara Pakai di Termux
 
 ```bash
-pkg update && pkg upgrade -y
-pkg install git curl figlet lolcat -y
-git clone https://github.com/GUSxOFC/ip-info-bot
-cd ip-info-bot
-bash main.sh
-
+git clone https://github.com/username/bot-info-tiktok-gusofc
+cd bot-info-tiktok-gusofc
+chmod +x bot-info-tiktok.sh
+./bot-info-tiktok.sh
