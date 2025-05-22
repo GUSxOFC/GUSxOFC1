@@ -1,36 +1,25 @@
 #!/bin/bash
 
-# Bot Info
-owner="GUSxOFC"
-version="1.0"
-status="kerja jadi agak jelek"
-botname="Bot Info by GusOfc"
-
-# Clear layar
-clear
-
-# Header bot
-echo "============================="
-echo "$botname"
-echo "Owner: $owner"
-echo "Version: $version"
-echo "Status: $status"
+# Info bot
+echo "Bot Info by GusOfc"
+echo "Owner: GUSxOFC"
+echo "Version: 1.0"
+echo "Status: kerja jadi agak jelek"
 echo "============================="
 
-# Minta input pengguna
-echo ""
-read -p "Masukkan link profil TikTok kamu: " link
+# Minta link profil TikTok
+read -p "Masukkan link profil TikTok kamu: " url
 
-# Ambil ID TikTok (hanya parsing dari URL)
-id=$(echo "$link" | grep -oP '(?<=tiktok.com/@)[^/?]+')
+# Ambil source HTML
+html=$(curl -s -L "$url")
 
-# Cek dan tampilkan
+# Cari ID angka dari JSON di source page
+id=$(echo "$html" | grep -oP '"id":"\d+"' | head -n 1 | grep -oP '\d+')
+
+# Tampilkan hasil
 echo ""
 if [ -z "$id" ]; then
-  echo "Gagal ambil ID TikTok... mungkin link-nya salah?"
+  echo "Gagal menemukan ID angka TikTok. Link mungkin salah atau dilindungi."
 else
-  echo "ID TikTok kamu adalah: $id"
+  echo "ID Angka TikTok kamu adalah: $id"
 fi
-
-echo ""
-echo "[selesai]"
